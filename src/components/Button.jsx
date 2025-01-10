@@ -1,7 +1,13 @@
-function Button({ label, type, name, value, handleSubmit }) {
+function Button({ text, onClick, disabled }) {
   return (
     <div>
-      <label htmlFor=""></label>
+      <button
+        className="py-2 px-4 bg-MarineBlue text-white rounded-lg "
+        onClick={onClick}
+        disabled={disabled}
+      >
+        {text}
+      </button>
     </div>
   );
 }

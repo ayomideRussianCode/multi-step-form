@@ -1,9 +1,9 @@
-import FormContainer from "./components/FormContainer";
+import SignUp from "./pages/SignUp";
 
 function App() {
   return (
     <div>
-      <FormContainer />
+      <SignUp />
     </div>
   );
 }

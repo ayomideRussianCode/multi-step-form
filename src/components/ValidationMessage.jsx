@@ -1,8 +1,8 @@
-function ValidationMesage({ label, type, name, value, handleSubmit }) {
+function ValidationMessage({ message }) {
   return (
     <div>
-      <label htmlFor=""></label>
+      <p className="text-sm text-StrawberryRed font-ubuntu">{message}</p>
     </div>
   );
 }
-export default ValidationMesage;
+export default ValidationMessage;

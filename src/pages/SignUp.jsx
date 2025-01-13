@@ -27,7 +27,7 @@ function SignUp() {
 
     if (Object.keys(newErrors).length === 0) {
       setLoading(true);
-      setFormData({ name: "", email: "", password: "" });
+      setFormData({ username: "", email: "", password: "" });
 
       try {
         const response = await axios.post(
@@ -44,16 +44,15 @@ function SignUp() {
         if (error.response) {
           alert("An error occurred");
         } else if (error.request) {
-          alert("an error occurred");
+          alert("No response from the server. Please try again.");
         } else {
-          alert("an error occurred");
+          alert("An unexpected error occurred");
         }
       } finally {
         setLoading(false);
       }
     }
   }
-  if (loading) return <p>Loading...</p>;
 
   return (
     <FormContainer>
@@ -84,6 +83,7 @@ function SignUp() {
           value={formData.password}
           onChange={handleChange}
           error={errors.password}
+          disabled={loading}
         />
         <Button text="Submit" onClick={handleSubmit} />
       </div>
